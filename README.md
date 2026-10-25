@@ -35,25 +35,25 @@ flowchart TD
 Блок схема функции дз
 ```mermaid
 flowchart TD
-    Start([Начало: n3<br>Параметры: number, *ed_even, *dec_even, *sot_even, *thousands_even]) --> CalcEd["ed = number % 10"]
+    Start([Начало: n3<br>Параметры: number, *ed_e, *dec_e, *sot_e, *thousands_e]) --> CalcEd["ed = number % 10"]
     CalcEd --> CalcDec["dec = (number / 10) % 10"]
     CalcDec --> CalcSot["sot = (number / 100) % 10"]
     CalcSot --> CalcTh["thousands = number / 1000"]
     
     CalcTh --> Cond1{ed % 2 == 0 ?}
-    Cond1 -- Да --> Act1["*ed_even = 1"]
+    Cond1 -- Да --> Act1["*ed_e = 1"]
     Cond1 -- Нет --> Cond2{dec % 2 == 0 ?}
     Act1 --> Cond2
     
-    Cond2 -- Да --> Act2["*dec_even = 1"]
+    Cond2 -- Да --> Act2["*dec_e = 1"]
     Cond2 -- Нет --> Cond3{sot % 2 == 0 ?}
     Act2 --> Cond3
     
-    Cond3 -- Да --> Act3["*sot_even = 1"]
+    Cond3 -- Да --> Act3["*sot_e = 1"]
     Cond3 -- Нет --> Cond4{thousands % 2 == 0 ?}
     Act3 --> Cond4
     
-    Cond4 -- Да --> Act4["*thousands_even = 1"]
+    Cond4 -- Да --> Act4["*thousands_e = 1"]
     Cond4 -- Нет --> Ret([return 0])
     Act4 --> Ret
 ```
