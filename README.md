@@ -1,4 +1,5 @@
 Блок схема функции main
+```mermaid
 flowchart TD
     Start([Начало: main]) --> Init[Локальные переменные:<br>int number<br>int ed_even=0, dec_even=0, sot_even=0, thousands_even=0]
     Init --> PrintVar["Вывод: 'Вариант 9'"]
@@ -28,10 +29,11 @@ flowchart TD
     CondTh -- Да --> PrintTh["Вывод: 'число тысяч - четное'"]
     CondTh -- Нет --> EndSuccess([Конец: return 0])
     PrintTh --> EndSuccess
-
+```
 
 
 Блок схема функции дз
+```mermaid
 flowchart TD
     Start([Начало: n3<br>Параметры: number, *ed_even, *dec_even, *sot_even, *thousands_even]) --> CalcEd["ed = number % 10"]
     CalcEd --> CalcDec["dec = (number / 10) % 10"]
@@ -54,3 +56,4 @@ flowchart TD
     Cond4 -- Да --> Act4["*thousands_even = 1"]
     Cond4 -- Нет --> Ret([return 0])
     Act4 --> Ret
+```
