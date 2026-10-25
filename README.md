@@ -1,7 +1,7 @@
 Блок схема функции main
 ```mermaid
 flowchart TD
-    Start([Начало: main]) --> Init[Локальные переменные:<br>int number<br>int ed_even=0, dec_even=0, sot_even=0, thousands_even=0]
+    Start([Начало: main]) --> Init[Локальные переменные:<br>int number<br>int ed_e=0, dec_e=0, sot_e=0, thousands_e=0]
     Init --> PrintVar["Вывод: 'Вариант 9'"]
     PrintVar --> PrintPrompt["Вывод: 'Введите четырехзначное число: '"]
     PrintPrompt --> Input[Ввод: number]
@@ -11,19 +11,19 @@ flowchart TD
     CondValid -- Нет --> PrintError["Вывод: 'введено не четырехзначное число.'"]
     PrintError --> EndError([Конец: return 0])
     
-    CondValid -- Да --> CallN3["Вызов функции:<br>n3(number, &ed_even, &dec_even, &sot_even, &thousands_even)"]
+    CondValid -- Да --> CallN3["Вызов функции:<br>n3(number, &ed_e, &dec_e, &sot_e, &thousands_e)"]
     
-    CallN3 --> CondEd{ed_even == 1 ?}
+    CallN3 --> CondEd{ed_e == 1 ?}
     CondEd -- Да --> PrintEd["Вывод: 'число единиц - четное'"]
-    CondEd -- Нет --> CondDec{dec_even == 1 ?}
+    CondEd -- Нет --> CondDec{dec_e == 1 ?}
     PrintEd --> CondDec
     
     CondDec -- Да --> PrintDec["Вывод: 'число десятков - четное'"]
-    CondDec -- Нет --> CondSot{sot_even == 1 ?}
+    CondDec -- Нет --> CondSot{sot_e == 1 ?}
     PrintDec --> CondSot
     
     CondSot -- Да --> PrintSot["Вывод: 'число сотен - четное'"]
-    CondSot -- Нет --> CondTh{thousands_even == 1 ?}
+    CondSot -- Нет --> CondTh{thousands_e == 1 ?}
     PrintSot --> CondTh
     
     CondTh -- Да --> PrintTh["Вывод: 'число тысяч - четное'"]
